@@ -1,0 +1,22 @@
+body{
+    margin: 20px;
+ }
+ .start-quiz{
+     margin: 0 auto; 
+     width: 700px; 
+     text-align: center; 
+      
+ }
+ .the-end{
+     margin: 0 auto; 
+     width: 900px; 
+     visibility: hidden;
+ }
+ 
+ .last-section{
+ 
+     margin: 0 auto; 
+     width: 900px; 
+     visibility: hidden;
+  }
+ 
