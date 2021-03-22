@@ -169,3 +169,45 @@ function onclickHandler(event) {
 
         divContEL.innerHTML = '';
      }
+
+// Display User Final Score
+function displayResult() {
+    finishDiv.style.visibility = "visible";
+    timeElement.textContent = "Time:" + " " + timer;
+    var HighScores = timer;
+    localStorage.getItem(HighScores)
+    finalScore.textContent = "Your final score is: " + HighScores;
+     localStorage.setItem("HighScores", HighScores)
+
+}
+}
+// High Score Page
+function renderLastItem() {
+var yourScore = localStorage.getItem("HighScores");
+ var yourInitial = localStorage.getItem("Initial");
+ if (yourScore && yourInitial === "") {
+    return
+}
+finishDiv.textContent = "";
+var finaPageEl = document.querySelector(".last-section");
+finaPageEl.style.visibility = "visible";
+var initialAndScore = document.querySelector("#staticEmail");
+initialAndScore.value = yourInitial + ":" + " " + yourScore;
+
+}
+
+// Submitting Score to Local Storage
+document.addEventListener("submit", function (event) {
+event.preventDefault();
+var initialInput = document.querySelector("#inputInitial").value;
+if (initialInput === "") {
+    errMsg.setAttribute("style", "color: red")
+    errMsg.textContent = "Initial input field cannot be empty"
+} else {
+    errMsg.textContent = "";
+    localStorage.getItem(initialInput)
+    localStorage.setItem("Initial", initialInput)
+     renderLastItem()
+}
+   
+
