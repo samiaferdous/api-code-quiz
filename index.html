@@ -18,10 +18,10 @@
     <div class="intro">
 
         <!-- Questions Begin Here -->
-        <div>
-            <h6 id="h-score">View Highscore</h6>
+        <div class="col-md-10 col-sm-6">
+            <h6 id="highscore">View Highscore</h6>
         </div>
-        <div>
+        <div class="col-md-2 col-sm-6">
             <h5 id="time">Time:0</h5>
         </div>
 
@@ -29,31 +29,61 @@
 
  <br><br>
 
-  <div>
-   <h1>Challenge Your JavaScript Knowledge!</h1>
-  </div>
+  <div class="start-quiz">
+        <div class="col-md-10 col-sm-6">
+         <h2>Test Your JavaScript Knowledge!</h1>
+        </div>
 
-  <div>
-    <p>You have 75 seconds to answer these JavaScript questions. Get an answer wrong, and your score and time will be deducted!</p>
+        <div class="col-md-10 col-sm-6">
+            <p>You have 75 seconds to answer these JavaScript questions. Get an answer wrong, and your score and time will be deducted!</p>
+            <button id="start" class="btn btn-primary btn-lg">Start Quiz</button>
+        </div>
   </div>
 
  <!-- Container for the questions -->
-  <div class="questions">
+    <div class="questions">
 
-    <h3 id="title">
+        <h3 id="title">
+        </h3>
 
-    </h3>
+        <ol id="list-questions">
+         </ol>
 
-    <ol id="list-questions">
-
-    </ol>
-
-  </div>
+    </div>
   <br>
-  
+
+  <div id="response"> </div>
+
  <!-- End of Quiz -->
+ <div class="the-end">
+    <h3>The End!</h3>
+
+    <p id="result"> </p>
+    <p id="errorSmg"></p>
+
+    <form class="form-inline">
+        <div class="form-group mb-2">
+            <h5 id="staticEmail2">Enter Your Initials.</h5>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <input type="text" class="form-control" id="inputInitial" placeholder="Enter your initials"> </div>
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </form>
+
+</div>
 
  <!-- High Scores -->
+ <div class="last-section">
+    <h2>HighScores</h2>
+
+    <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="1.">
+
+    </div>
+    <button class="myBtn" onclick="init()">Go Back</button>
+    <button class="myBtn" onclick="clearScore()">Clear All Highscores</button>
+
+</div>
 
  <!-- Script Link -->
  <script src="script.js"></script>
