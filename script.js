@@ -209,5 +209,12 @@ if (initialInput === "") {
     localStorage.setItem("Initial", initialInput)
      renderLastItem()
 }
-   
-
+})
+//Restart Game Function
+function init() {
+    location.reload();
+   }
+   // Clear All Scores
+   function clearScore() {
+   initialAndScore.value = "";
+   }

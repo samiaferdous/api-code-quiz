@@ -1,6 +1,7 @@
 body{
     margin: 20px;
  }
+
  .start-quiz{
      margin: 0 auto; 
      width: 700px; 
@@ -19,7 +20,7 @@ body{
      width: 900px; 
      visibility: hidden;
   }
- 
+
   /* BUTTONS */
 
   .all_btn{
@@ -43,8 +44,6 @@ body{
     border-radius: 5px;
     color: white;   
     font-size: 1.em;
-    
-
 }
 
 button{
