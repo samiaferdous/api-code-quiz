@@ -97,11 +97,11 @@ function displayQuestions() {
     });
 }
 
-    // Timer Function
-    var timer = 100;
-    var timeCount;
+// Timer Function
+ var timer = 100;
+var timeCount;       
 
-    function setupTimer() {
+function setupTimer() {    
         timeCount = setInterval(function () {
             timer--;
             var timeReset = timeElement.textContent = "Time:" + " " + timer;
@@ -114,4 +114,58 @@ function displayQuestions() {
             }
         }, 1000)
     }
+
+
+// Event Listener to Start the Timer
+document.addEventListener("click", function (event) {
+    if (event.target === btnElement) {
+        wrapperElement.style.display = "none";
+        setupTimer()
+        displayQuestions();
+    }
+
+})
+
+var i = 0;
+
+//Check Answers and Display if Correct or Incorrect
+function onclickHandler(event) {
+     
+    if(timer<=0){
+        clearInterval(timeCount);
+        divContEL.style.display="none";
+        displayResult();
+    }
+    var answerText = event.target.textContent 
+    if (answerText === questions[i].answer) {
+        timer = timer;
+        responsDiv.setAttribute("style", "color: green")
+        responsDiv.textContent = "Correct";
+    } else {
+
+        responsDiv.setAttribute("style", "color: red")
+        responsDiv.textContent = "Wrong";
+        timer = timer - 15;
+     }
     
+      
+     
+    if (i < questions.length-1) {
+
+      i++;
+
+      setTimeout(function () {
+      displayQuestions();
+      responsDiv.textContent = "";
+    }, 1000)
+    }else {
+        setTimeout(function () {
+            responsDiv.textContent = "";
+            displayResult();
+            clearInterval(timeCount);
+          
+        }, 500)
+    
+
+        divContEL.innerHTML = '';
+     }
